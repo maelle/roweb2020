@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="{{ "/" | relURL}}">{{ $img := "/images/logotype_white.svg" }}<img
+      src="{{ $img | relURL }}"></a>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="icon-bar top-bar"></span>
+	  <span class="icon-bar middle-bar"></span>
+	  <span class="icon-bar bottom-bar"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      {{ range .Site.Menus.main }}
+      {{ if .HasChildren }}      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="{{.URL}}" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{ .Name }}
+        </a>
+        <div class="dropdown-menu animate slideIn shadow" aria-labelledby="navbarDropdown">
+          {{ range .Children }}
+          {{ if .HasChildren }}
+          <a class="dropdown-item dropdown-toggle dropdown-sub-item" href="{{.URL}}" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
+          <div class="dropdown-menu dropdown-submenu animate slideIn shadow">
+            {{ range .Children }}
+            <a class="dropdown-item" href="{{.URL}}">{{ .Name }}</a>
+            {{ end }}
+          </div>
+          {{ else }}
+          <a class="dropdown-item" href="{{.URL}}">{{ .Name }}</a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </li>
+      {{else}}
+      <li class="nav-item"><a class="nav-link" href="{{.URL}}">{{ .Name }}</a></li>
+      {{end}}
+      {{end}}
+    </ul>
+    
+  </div>
+</nav>

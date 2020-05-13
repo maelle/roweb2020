@@ -1,0 +1,115 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "rOpenSci 2020 Theme"
+theme = "2020"
+relativeURLs = true
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 120
+
+  [[menu.dummy]]
+    identifier = "about"
+    name = "About"
+    url = "#"
+    weight = 100
+      
+      [[menu.dummy]]
+      identifier = "thing"
+      name = "Thing"
+      parent = "about"
+      url = "#"
+      weight = 100
+
+  [[menu.dummy]]
+    identifier = "packages"
+    name = "Packages"
+    url = "#"
+    weight = 101
+
+    [[menu.dummy]]
+    identifier = "pckg-category"
+    name = "Category"
+    parent = "packages"
+    url = "#"
+    weight = 100
+    
+          [[menu.dummy]]
+          identifier = "pckg-category"
+          name = "Category"
+          parent = "packages"
+          url = "#"
+          weight = 100
+
+                  [[menu.dummy]]
+                  identifier = "test1"
+                  name = "Test1"
+                  parent = "pckg-category"
+                  url = "#"
+                  weight = 101
+                  
+                  [[menu.dummy]]
+                  identifier = "test2"
+                  name = "Test2"
+                  parent = "pckg-category"
+                  url = "#"
+                  weight = 102
+                  
+                  [[menu.dummy]]
+                  identifier = "test3"
+                  name = "Test3"
+                  parent = "pckg-category"
+                  url = "#"
+                  weight = 103
+          
+          [[menu.dummy]]
+          identifier = "pckg-tuts"
+          name = "Tutorials"
+          parent = "packages"
+          url = "#"
+          weight = 101
+
+          [[menu.dummy]]
+          identifier = "pckg-cases"
+          name = "Use Cases"
+          parent = "packages"
+          url = "#"
+          weight = 102
+
+    
+    [[menu.dummy]]
+    identifier = "pckg-category"
+    name = "Category"
+    parent = "packages"
+    url = "#"
+    weight = 100
+
+  [[menu.dummy]]
+    identifier = "community"
+    name = "Community"
+    url = "#"
+    weight = 102
+
+  [[menu.dummy]]
+    identifier = "blog"
+    name = "Blog"
+    url = "#"
+    weight = 103
+
+  [[menu.dummy]]
+    identifier = "resources"
+    name = "Resources"
+    url = "#"
+    weight = 104
+
+  [[menu.dummy]]
+    identifier = "docs"
+    name = "Docs"
+    url = "#"
+    weight = 105
+  
+
+pygmentsCodeFences = true
+pygmentsUseClasses = true

@@ -1,0 +1,11 @@
+{
+  "name": "2020",
+  "scripts": {
+    "build": "node-sass --include-path node_modules scss -o static/css/",
+    "watch": "node-sass --watch --include-path node_modules scss -o static/css/"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "node-sass": "^4.9.4"
+  }
+}
