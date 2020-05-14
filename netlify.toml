@@ -3,6 +3,7 @@ publish = "/public"
 command = "hugo server --gc -s . --minify"
 
 [context.production.environment]
+  HUGO_ENV = "production"
   HUGO_VERSION = "0.69.2"
 
 [context.deploy-preview.environment]
