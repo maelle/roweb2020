@@ -1,0 +1,6 @@
+{{ $isDev := ne hugo.Environment "production" }}
+{{ $mainCSS := resources.Get "scss/main.scss" | toCSS }}
+ {{ if not $isDev }}
+{{ $mainCSS = $mainCSS |  postCSS | minify | fingerprint }}
+{{ end }}
+<link href='{{ $mainCSS.RelPermalink }}' rel="stylesheet" {{ if not $isDev }}integrity="{{ $mainCSS.Data.Integrity }}"{{ end }} />
