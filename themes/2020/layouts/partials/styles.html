@@ -1,0 +1,7 @@
+{{ $isDev := ne hugo.Environment "production" }}
+{{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" $isDev ) }}
+{{ $mainCSS := resources.Get "scss/main.scss" | toCSS  $cssOpts }}
+ {{ if not $isDev }}
+{{ $mainCSS = $mainCSS |  postCSS | minify | fingerprint }}
+{{ end }}
+<link href='{{ $mainCSS.RelPermalink }}' rel="stylesheet" {{ if not $isDev }}integrity="{{ $mainCSS.Data.Integrity }}"{{ end }} />
