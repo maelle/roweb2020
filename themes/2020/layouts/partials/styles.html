@@ -1,5 +1,6 @@
 {{ $isDev := ne hugo.Environment "production" }}
-{{ $mainCSS := resources.Get "scss/main.scss" | toCSS }}
+{{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" $isDev ) }}
+{{ $mainCSS := resources.Get "scss/main.scss" | toCSS  $cssOpts }}
  {{ if not $isDev }}
 {{ $mainCSS = $mainCSS |  postCSS | minify | fingerprint }}
 {{ end }}
